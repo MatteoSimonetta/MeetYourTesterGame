@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6au60vi3pdxx"]
 
 [ext_resource type="AudioStream" uid="uid://bhor6ln1my5i" path="res://sounds/audioBackground.mp3" id="1_ov7xi"]
-[ext_resource type="Script" path="res://BackgroundAudioController/BackgroundAudio.gd" id="1_pjwnj"]
+[ext_resource type="Script" uid="uid://cyiq3t1ey7xxt" path="res://BackgroundAudioController/BackgroundAudio.gd" id="1_pjwnj"]
 
 [node name="MusicController" type="Node"]
 script = ExtResource("1_pjwnj")

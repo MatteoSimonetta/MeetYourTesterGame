@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://newdc3qfq08j"]
 
 [ext_resource type="Texture2D" uid="uid://ciww7iw8ke16u" path="res://images/game-map/question-page/frame.svg" id="1_p1gv0"]
-[ext_resource type="Script" path="res://ui/main_screen/terminal/terminal_communication.gd" id="1_rdfio"]
-[ext_resource type="Script" path="res://ui/main_screen/terminal/handle_terminal.gd" id="3_oihmk"]
+[ext_resource type="Script" uid="uid://cygbt0x46ir5h" path="res://ui/main_screen/terminal/terminal_communication.gd" id="1_rdfio"]
+[ext_resource type="Script" uid="uid://ct7uodnr28r1b" path="res://ui/main_screen/terminal/handle_terminal.gd" id="3_oihmk"]
 [ext_resource type="AudioStream" uid="uid://chrnvfhou1blg" path="res://sounds/clickAnswer.mp3" id="4_ehblv"]
 
 [node name="_terminal_mock" type="Node2D"]

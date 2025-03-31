@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gmj7dmcu4n6a"]
 
-[ext_resource type="Script" path="res://addons/gut/test.gd" id="1_rhxo7"]
+[ext_resource type="Script" uid="uid://b5kome78ipqur" path="res://addons/gut/test.gd" id="1_rhxo7"]
 
 [node name="TestScene" type="Node2D"]
 

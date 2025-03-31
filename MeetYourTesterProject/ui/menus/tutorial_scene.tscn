@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://joo288j0m3hc"]
 
-[ext_resource type="Script" path="res://ui/menus/tutorial_scene.gd" id="1_4s16k"]
+[ext_resource type="Script" uid="uid://dpca2imo0ypf4" path="res://ui/menus/tutorial_scene.gd" id="1_4s16k"]
 [ext_resource type="Texture2D" uid="uid://bpf8815hj0hsr" path="res://images/tutorial/1_global_timing.svg" id="2_4k7k3"]
 [ext_resource type="Texture2D" uid="uid://duao0hfoktse2" path="res://images/tutorial-popup/tutorial_menu_overlay.svg" id="3_x266r"]
 [ext_resource type="FontFile" uid="uid://w2vy61sxp1ph" path="res://fonts/CascadiaCode.ttf" id="4_hxejs"]
