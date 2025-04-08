@@ -41,5 +41,5 @@ size_flags_vertical = 0
 texture_normal = ExtResource("4_q078e")
 texture_hover = ExtResource("5_t8xyq")
 
-[connection signal="pressed" from="cancel_btn" to="." method="OnCancelButtonPressed"]
+[connection signal="pressed" from="cancel_btn" to="." method="OnCancelBtnPressed"]
 [connection signal="pressed" from="exit_btn" to="." method="OnExitBtnPressed"]
