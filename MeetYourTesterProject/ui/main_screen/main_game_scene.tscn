@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=3 uid="uid://dpyn1enbx4w7u"]
 
-[ext_resource type="Script" uid="uid://dt36hyiv1uhw4" path="res://ui/main_screen/main_script.gd" id="1_87vrv"]
+[ext_resource type="Script" uid="uid://bltotg3dw2yf8" path="res://ui/main_screen/MainScript.cs" id="1_i07pr"]
 [ext_resource type="Texture2D" uid="uid://wgpfvhfu1oi6" path="res://images/game-map/time/timer.svg" id="1_lc3b6"]
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="1_tp77f"]
 [ext_resource type="Texture2D" uid="uid://b46cjpn0dkvib" path="res://images/game-map/time/speed.svg" id="3_ps3v0"]
@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://cjv8slc8lv7yw" path="res://images/music-sounds/MusicActivated.svg" id="41_743m6"]
 [ext_resource type="Script" uid="uid://du1irdsrseu8f" path="res://ui/main_screen/SoundEffectControl.gd" id="41_kxsxo"]
 [ext_resource type="Texture2D" uid="uid://c8dl7a5ghe0f0" path="res://images/music-sounds/MusicDeactivated.svg" id="42_eebn0"]
-[ext_resource type="Script" uid="uid://ob5ca5ddjmbw" path="res://ui/main_screen/BackgroundMusicControl.gd" id="44_0e055"]
+[ext_resource type="Script" uid="uid://bhrckisq26rwg" path="res://BackgroundAudioController/BackgroundAudio.cs" id="44_i07pr"]
 [ext_resource type="PackedScene" uid="uid://joo288j0m3hc" path="res://ui/menus/tutorial_scene.tscn" id="47_0rulr"]
 [ext_resource type="Script" uid="uid://dypiebbodpxln" path="res://ui/main_screen/close_ingame_tutorial.gd" id="47_2j76q"]
 [ext_resource type="Texture2D" uid="uid://bvbpeochd8uco" path="res://images/tutorial-popup/tutorial_quit_base.svg" id="49_ql2w8"]
@@ -55,7 +55,7 @@
 load_path = "res://.godot/imported/pause.svg-09127f19c3b279e09b32f71d3249e6c1.ctex"
 
 [node name="MainGameScene" type="Node2D"]
-script = ExtResource("1_87vrv")
+script = ExtResource("1_i07pr")
 
 [node name="Background" type="VideoStreamPlayer" parent="."]
 offset_right = 1920.0
@@ -513,7 +513,7 @@ toggle_mode = true
 button_pressed = true
 texture_normal = ExtResource("42_eebn0")
 texture_pressed = ExtResource("41_743m6")
-script = ExtResource("44_0e055")
+script = ExtResource("44_i07pr")
 
 [node name="ExitPrompt" type="Node2D" parent="."]
 
