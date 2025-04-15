@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://xlf3saf5tm6e"]
 
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="1_latmh"]
+[ext_resource type="Script" uid="uid://dhidxtkd6in47" path="res://ui/menus/HandleMainMenu.cs" id="1_rsjqv"]
 [ext_resource type="Texture2D" uid="uid://bqr3h3k41im03" path="res://images/start-scene/menu-title.svg" id="2_7cxd6"]
 [ext_resource type="Texture2D" uid="uid://yolsays8s4jk" path="res://images/start-scene/btn-icon-start.svg" id="3_ypef2"]
 [ext_resource type="Texture2D" uid="uid://dn7esiiyigatj" path="res://images/start-scene/btn-icon-start-select.svg" id="4_eimxy"]
 [ext_resource type="Texture2D" uid="uid://bckjmmvhob7je" path="res://images/start-scene/btn-label-start.svg" id="4_yc4l4"]
 [ext_resource type="Texture2D" uid="uid://p1vy17eaqdmg" path="res://images/start-scene/btn-icon-tutorial.svg" id="5_e1mje"]
-[ext_resource type="Script" uid="uid://cuqetjcprxn7f" path="res://ui/menus/handle_main_menu.gd" id="5_wor2r"]
 [ext_resource type="Texture2D" uid="uid://cri1xp862ppn2" path="res://images/start-scene/btn-label-tutorial.svg" id="6_wn0v8"]
 [ext_resource type="Texture2D" uid="uid://3mhgjnmj42ky" path="res://images/start-scene/btn-icon-options.svg" id="7_cirhr"]
 [ext_resource type="Texture2D" uid="uid://qt4q5cgcfi1t" path="res://images/start-scene/btn-label-start-select.svg" id="7_hets2"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c5nasjdg5ntsi" path="res://ui/menus/tutorial_popup_scene.tscn" id="17_nfse2"]
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("5_wor2r")
+script = ExtResource("1_rsjqv")
 
 [node name="Background" type="VideoStreamPlayer" parent="."]
 offset_right = 1920.0
@@ -119,12 +119,12 @@ position = Vector2(-1, 2)
 [connection signal="mouse_entered" from="GridContainer/StartIcon" to="." method="_on_start_icon_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer/StartIcon" to="." method="_on_start_icon_mouse_exited"]
 [connection signal="pressed" from="GridContainer/StartIcon" to="." method="_on_start_game_label_pressed"]
-[connection signal="mouse_entered" from="GridContainer/CenterStartLabel/StartLabel" to="." method="_on_start_label_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/CenterStartLabel/StartLabel" to="." method="_on_start_label_mouse_exited"]
-[connection signal="pressed" from="GridContainer/CenterStartLabel/StartLabel" to="." method="_on_start_game_label_pressed"]
-[connection signal="mouse_entered" from="GridContainer/QuitIcon" to="." method="_on_quit_icon_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/QuitIcon" to="." method="_on_quit_icon_mouse_exited"]
-[connection signal="pressed" from="GridContainer/QuitIcon" to="." method="_on_quit_label_pressed"]
-[connection signal="mouse_entered" from="GridContainer/CenterQuitLabel/QuitLabel" to="." method="_on_quit_label_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/CenterQuitLabel/QuitLabel" to="." method="_on_quit_label_mouse_exited"]
-[connection signal="pressed" from="GridContainer/CenterQuitLabel/QuitLabel" to="." method="_on_quit_label_pressed"]
+[connection signal="mouse_entered" from="GridContainer/CenterStartLabel/StartLabel" to="." method="OnStartLabelMouseEntered"]
+[connection signal="mouse_exited" from="GridContainer/CenterStartLabel/StartLabel" to="." method="OnStartLabelMouseExited"]
+[connection signal="pressed" from="GridContainer/CenterStartLabel/StartLabel" to="." method="OnStartGameLabelPressed"]
+[connection signal="mouse_entered" from="GridContainer/QuitIcon" to="." method="OnQuitIconMouseEntered"]
+[connection signal="mouse_exited" from="GridContainer/QuitIcon" to="." method="OnQuitIconMouseExited"]
+[connection signal="pressed" from="GridContainer/QuitIcon" to="." method="OnQuitLabelPressed"]
+[connection signal="mouse_entered" from="GridContainer/CenterQuitLabel/QuitLabel" to="." method="OnQuitLabelMouseEntered"]
+[connection signal="mouse_exited" from="GridContainer/CenterQuitLabel/QuitLabel" to="." method="OnQuitLabelMouseExited"]
+[connection signal="pressed" from="GridContainer/CenterQuitLabel/QuitLabel" to="." method="OnQuitLabelPressed"]

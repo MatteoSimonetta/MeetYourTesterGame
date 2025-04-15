@@ -118,5 +118,5 @@ func _on_quit_label_mouse_exited():
 	quitIcon.texture_normal = ResourceLoader.load("res://images/start-scene/btn-icon-exit.svg")
 	
 func _debug_print(msg):
-	if Globals.DEBUG_MODE:
+	if Globals.Instance.DEBUG_MODE:
 		print(msg)
