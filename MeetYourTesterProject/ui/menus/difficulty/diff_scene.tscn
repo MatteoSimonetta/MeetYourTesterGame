@@ -1,16 +1,16 @@
 [gd_scene load_steps=22 format=3 uid="uid://doqt2siiqyb2a"]
 
-[ext_resource type="Script" uid="uid://bt0vx82l4el7d" path="res://ui/menus/difficulty/handle_difficulty_menu.gd" id="1_5jier"]
 [ext_resource type="Texture2D" uid="uid://bc7s65ssh3cgh" path="res://images/start-scene/btn-label-easy.svg" id="1_bqnr1"]
+[ext_resource type="Script" uid="uid://x3g7w06uho61" path="res://ui/menus/difficulty/HandleDifficultyMenu.cs" id="1_lxiry"]
 [ext_resource type="Texture2D" uid="uid://dfyql346x7kwp" path="res://images/start-scene/btn-label-medium.svg" id="2_ggpfl"]
 [ext_resource type="Texture2D" uid="uid://7o5q1rpboy3w" path="res://images/start-scene/btn-icon-easy.svg" id="2_mnuxq"]
-[ext_resource type="Script" uid="uid://xomlo7ji6q2n" path="res://ui/menus/difficulty/handle_difficulty.gd" id="2_ty5a8"]
 [ext_resource type="Texture2D" uid="uid://dt5pa0n2lmbrh" path="res://images/start-scene/btn-label-hard.svg" id="3_m4dx8"]
 [ext_resource type="Texture2D" uid="uid://b67femqvsaggk" path="res://images/start-scene/btn-label-cancel.svg" id="4_w18dt"]
 [ext_resource type="Script" uid="uid://062i2sumgi3w" path="res://ui/menus/difficulty/player_name_input.gd" id="6_ifxn4"]
 [ext_resource type="Texture2D" uid="uid://dna006taf11ie" path="res://images/start-scene/btn-icon-medium.svg" id="7_j6g5n"]
 [ext_resource type="Texture2D" uid="uid://cr7g7ytvi6pw1" path="res://images/start-scene/btn-icon-hard.svg" id="11_kw371"]
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="12_d3j0m"]
+[ext_resource type="Script" uid="uid://htgi2yyhix40" path="res://ui/menus/difficulty/HandleDifficulty.cs" id="13_5hktr"]
 [ext_resource type="Texture2D" uid="uid://dn7esiiyigatj" path="res://images/start-scene/btn-icon-start-select.svg" id="14_jh1pw"]
 [ext_resource type="Texture2D" uid="uid://qqqi7myb5fbl" path="res://images/start-scene/btn-icon-cancel.svg" id="15_aikcy"]
 [ext_resource type="Texture2D" uid="uid://qt4q5cgcfi1t" path="res://images/start-scene/btn-label-start-select.svg" id="16_o0pe2"]
@@ -25,7 +25,7 @@
 [node name="DifficultyMenu" type="Node2D"]
 clip_children = 2
 use_parent_material = true
-script = ExtResource("1_5jier")
+script = ExtResource("1_lxiry")
 
 [node name="Background" type="VideoStreamPlayer" parent="."]
 z_as_relative = false
@@ -74,9 +74,8 @@ columns = 2
 [node name="EasyIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("2_mnuxq")
-script = ExtResource("2_ty5a8")
-difficulty_level = 1
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+script = ExtResource("13_5hktr")
+DifficultyLevel = 1
 
 [node name="CenterEasyLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -85,16 +84,14 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("1_bqnr1")
-script = ExtResource("2_ty5a8")
-difficulty_level = 1
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+script = ExtResource("13_5hktr")
+DifficultyLevel = 1
 
 [node name="MediumIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("7_j6g5n")
-script = ExtResource("2_ty5a8")
-difficulty_level = 2
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+script = ExtResource("13_5hktr")
+DifficultyLevel = 2
 
 [node name="CenterMediumLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -103,16 +100,14 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("2_ggpfl")
-script = ExtResource("2_ty5a8")
-difficulty_level = 2
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+script = ExtResource("13_5hktr")
+DifficultyLevel = 2
 
 [node name="HardIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("11_kw371")
-script = ExtResource("2_ty5a8")
-difficulty_level = 3
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+script = ExtResource("13_5hktr")
+DifficultyLevel = 3
 
 [node name="CenterHardLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -121,15 +116,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("3_m4dx8")
-script = ExtResource("2_ty5a8")
-difficulty_level = 3
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+script = ExtResource("13_5hktr")
+DifficultyLevel = 3
 
 [node name="CancelIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("15_aikcy")
-script = ExtResource("2_ty5a8")
-next_scene_path = "res://ui/menus/main_menu.tscn"
+script = ExtResource("13_5hktr")
 
 [node name="CenterCancelLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -138,8 +131,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("4_w18dt")
-script = ExtResource("2_ty5a8")
-next_scene_path = "res://ui/menus/main_menu.tscn"
+script = ExtResource("13_5hktr")
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 anchors_preset = 2
@@ -211,21 +203,21 @@ offset_bottom = 436.0
 layout_mode = 2
 texture = ExtResource("23_f0m7b")
 
-[connection signal="mouse_entered" from="DiffBtns/EasyIcon" to="." method="_on_diff_btn_mouse_entered" binds= [1]]
-[connection signal="mouse_exited" from="DiffBtns/EasyIcon" to="." method="_on_diff_btn_mouse_exited" binds= [1]]
-[connection signal="mouse_entered" from="DiffBtns/CenterEasyLabel/EasyDiffBtn" to="." method="_on_diff_btn_mouse_entered" binds= [1]]
-[connection signal="mouse_exited" from="DiffBtns/CenterEasyLabel/EasyDiffBtn" to="." method="_on_diff_btn_mouse_exited" binds= [1]]
-[connection signal="mouse_entered" from="DiffBtns/MediumIcon" to="." method="_on_diff_btn_mouse_entered" binds= [2]]
-[connection signal="mouse_exited" from="DiffBtns/MediumIcon" to="." method="_on_diff_btn_mouse_exited" binds= [2]]
-[connection signal="mouse_entered" from="DiffBtns/CenterMediumLabel/MediumDiffBtn" to="." method="_on_diff_btn_mouse_entered" binds= [2]]
-[connection signal="mouse_exited" from="DiffBtns/CenterMediumLabel/MediumDiffBtn" to="." method="_on_diff_btn_mouse_exited" binds= [2]]
-[connection signal="mouse_entered" from="DiffBtns/HardIcon" to="." method="_on_diff_btn_mouse_entered" binds= [3]]
-[connection signal="mouse_exited" from="DiffBtns/HardIcon" to="." method="_on_diff_btn_mouse_exited" binds= [3]]
-[connection signal="mouse_entered" from="DiffBtns/CenterHardLabel/HardDiffBtn" to="." method="_on_diff_btn_mouse_entered" binds= [3]]
-[connection signal="mouse_exited" from="DiffBtns/CenterHardLabel/HardDiffBtn" to="." method="_on_diff_btn_mouse_exited" binds= [3]]
-[connection signal="mouse_entered" from="DiffBtns/CancelIcon" to="." method="_on_diff_btn_mouse_entered" binds= [0]]
-[connection signal="mouse_exited" from="DiffBtns/CancelIcon" to="." method="_on_diff_btn_mouse_exited" binds= [0]]
-[connection signal="pressed" from="DiffBtns/CancelIcon" to="DiffBtns/CancelIcon" method="_on_Button_pressed"]
-[connection signal="mouse_entered" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="_on_diff_btn_mouse_entered" binds= [0]]
-[connection signal="mouse_exited" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="_on_diff_btn_mouse_exited" binds= [0]]
-[connection signal="pressed" from="DiffBtns/CenterCancelLabel/CancelBtn" to="DiffBtns/CenterCancelLabel/CancelBtn" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="DiffBtns/EasyIcon" to="." method="OnDiffBtnMouseEntered" binds= [1]]
+[connection signal="mouse_exited" from="DiffBtns/EasyIcon" to="." method="OnDiffBtnMouseExited" binds= [1]]
+[connection signal="mouse_entered" from="DiffBtns/CenterEasyLabel/EasyDiffBtn" to="." method="OnDiffBtnMouseEntered" binds= [1]]
+[connection signal="mouse_exited" from="DiffBtns/CenterEasyLabel/EasyDiffBtn" to="." method="OnDiffBtnMouseExited" binds= [1]]
+[connection signal="mouse_entered" from="DiffBtns/MediumIcon" to="." method="OnDiffBtnMouseEntered" binds= [2]]
+[connection signal="mouse_exited" from="DiffBtns/MediumIcon" to="." method="OnDiffBtnMouseExited" binds= [2]]
+[connection signal="mouse_entered" from="DiffBtns/CenterMediumLabel/MediumDiffBtn" to="." method="OnDiffBtnMouseEntered" binds= [2]]
+[connection signal="mouse_exited" from="DiffBtns/CenterMediumLabel/MediumDiffBtn" to="." method="OnDiffBtnMouseExited" binds= [2]]
+[connection signal="mouse_entered" from="DiffBtns/HardIcon" to="." method="OnDiffBtnMouseEntered" binds= [3]]
+[connection signal="mouse_exited" from="DiffBtns/HardIcon" to="." method="OnDiffBtnMouseExited" binds= [3]]
+[connection signal="mouse_entered" from="DiffBtns/CenterHardLabel/HardDiffBtn" to="." method="OnDiffBtnMouseEntered" binds= [3]]
+[connection signal="mouse_exited" from="DiffBtns/CenterHardLabel/HardDiffBtn" to="." method="OnDiffBtnMouseExited" binds= [3]]
+[connection signal="mouse_entered" from="DiffBtns/CancelIcon" to="." method="OnDiffBtnMouseEntered" binds= [0]]
+[connection signal="mouse_exited" from="DiffBtns/CancelIcon" to="." method="OnDiffBtnMouseExited" binds= [0]]
+[connection signal="pressed" from="DiffBtns/CancelIcon" to="DiffBtns/CancelIcon" method="OnButtonPressed"]
+[connection signal="mouse_entered" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="OnDiffBtnMouseEntered"]
+[connection signal="mouse_exited" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="OnDiffBtnMouseExited"]
+[connection signal="pressed" from="DiffBtns/CenterCancelLabel/CancelBtn" to="DiffBtns/CenterCancelLabel/CancelBtn" method="OnButtonPressed"]

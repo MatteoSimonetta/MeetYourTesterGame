@@ -95,7 +95,7 @@ public partial class Globals : Node
         set => _decreaseFinalDeadlineAmount = value; 
     
     }
-    public Variant EndGameReason { get; set; }
+    public int? EndGameReason { get; set; }
     
     [Export] private float _bgMusicVolume = 0f;
     public float BgMusicVolume { get => _bgMusicVolume; set => _bgMusicVolume = value; }
