@@ -17,12 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://bmdtbh61rtdwa" path="res://images/game-map/simple-hex/hex-cell-business.svg" id="12_l01y6"]
 [ext_resource type="Texture2D" uid="uid://cqul3fdpbrlv2" path="res://images/game-map/selected-hex/hex-cel-buisness-logic-selected.svg" id="13_vejf5"]
 [ext_resource type="Texture2D" uid="uid://dlpx4hjfysmbd" path="res://images/game-map/simple-hex/hex-cell-backend.svg" id="14_0eftj"]
+[ext_resource type="Script" uid="uid://dq26gks4yh57l" path="res://ui/main_screen/InitCountdown.cs" id="14_i07pr"]
 [ext_resource type="Texture2D" uid="uid://dsyxmv2i03ur7" path="res://images/game-map/notification-hex/hex-cell-business-notification.svg" id="14_ov5tk"]
 [ext_resource type="Texture2D" uid="uid://bascpiay0qrgh" path="res://images/game-map/selected-hex/hex-cell-backend-selected.svg" id="15_8ck7c"]
 [ext_resource type="Texture2D" uid="uid://bmlybrtxl8cum" path="res://images/game-map/simple-hex/hex-cell-ui-ux.svg" id="16_ir080"]
 [ext_resource type="Texture2D" uid="uid://da7lgcc231bpm" path="res://images/game-map/notification-hex/hex-cell-backend-notifiaction.svg" id="17_3vmwg"]
 [ext_resource type="Texture2D" uid="uid://dk8drfc0yhdjy" path="res://images/game-map/selected-hex/hex-cell-ui-ux-selected.svg" id="17_udybg"]
-[ext_resource type="Script" uid="uid://b1bxos3as8imr" path="res://ui/main_screen/init_countdown.gd" id="18_0wahk"]
 [ext_resource type="Script" uid="uid://5vdyq7gcdl4l" path="res://ui/main_screen/action_event_btn_manager.gd" id="18_nwfow"]
 [ext_resource type="Texture2D" uid="uid://dp3uujxgl4xqh" path="res://images/game-map/notification-hex/hex-cell-ux-notification.svg" id="20_ajqmu"]
 [ext_resource type="Script" uid="uid://c6gsfpn68c2jd" path="res://ui/main_screen/progress_bar_control.gd" id="25_n2qqa"]
@@ -193,7 +193,7 @@ offset_right = 130.0
 offset_bottom = 221.0
 
 [node name="Timer" type="Timer" parent="MainControl/Database/Label"]
-script = ExtResource("18_0wahk")
+script = ExtResource("14_i07pr")
 
 [node name="Delivery" type="TextureButton" parent="MainControl"]
 layout_mode = 0
@@ -216,7 +216,7 @@ offset_right = 166.0
 offset_bottom = 111.0
 
 [node name="Timer" type="Timer" parent="MainControl/Delivery/Label"]
-script = ExtResource("18_0wahk")
+script = ExtResource("14_i07pr")
 
 [node name="Business_Logic" type="TextureButton" parent="MainControl"]
 layout_mode = 0
@@ -237,7 +237,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="MainControl/Business_Logic/Label"]
-script = ExtResource("18_0wahk")
+script = ExtResource("14_i07pr")
 
 [node name="Backend" type="TextureButton" parent="MainControl"]
 layout_mode = 0
@@ -258,7 +258,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="MainControl/Backend/Label"]
-script = ExtResource("18_0wahk")
+script = ExtResource("14_i07pr")
 
 [node name="UI_UX" type="TextureButton" parent="MainControl"]
 layout_mode = 0
@@ -279,7 +279,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="MainControl/UI_UX/Label"]
-script = ExtResource("18_0wahk")
+script = ExtResource("14_i07pr")
 
 [node name="ProgressBarControl" type="Control" parent="."]
 layout_mode = 3

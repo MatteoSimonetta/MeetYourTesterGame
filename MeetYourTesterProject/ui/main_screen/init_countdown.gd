@@ -43,4 +43,3 @@ func send_time_to_label():
 		sub_str = str(self.time_left).substr(0, 3)
 		
 	get_parent().text = sub_str
-
