@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bmlybrtxl8cum" path="res://images/game-map/simple-hex/hex-cell-ui-ux.svg" id="16_ir080"]
 [ext_resource type="Texture2D" uid="uid://da7lgcc231bpm" path="res://images/game-map/notification-hex/hex-cell-backend-notifiaction.svg" id="17_3vmwg"]
 [ext_resource type="Texture2D" uid="uid://dk8drfc0yhdjy" path="res://images/game-map/selected-hex/hex-cell-ui-ux-selected.svg" id="17_udybg"]
-[ext_resource type="Script" uid="uid://5vdyq7gcdl4l" path="res://ui/main_screen/action_event_btn_manager.gd" id="18_nwfow"]
+[ext_resource type="Script" uid="uid://b20p06rv4d2fv" path="res://ui/main_screen/action_event_btn_manager.gd" id="18_nwfow"]
 [ext_resource type="Texture2D" uid="uid://dp3uujxgl4xqh" path="res://images/game-map/notification-hex/hex-cell-ux-notification.svg" id="20_ajqmu"]
 [ext_resource type="Script" uid="uid://dg3at6qckk7c3" path="res://ui/main_screen/ProgressBarControl.cs" id="25_n2qqa"]
 [ext_resource type="PackedScene" uid="uid://newdc3qfq08j" path="res://ui/main_screen/terminal/terminal_mock.tscn" id="26_lb6pa"]
