@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneManager="*res://scripts/managers/scene_manager.gd"
+SceneManager="*res://scripts/managers/SceneManager.cs"
 Globals="*res://scripts/stores/Globals.cs"
 Utils="*res://scripts/stores/Utils.cs"
 BackgroundAudio="*res://BackgroundAudioController/BackgroundAudio.tscn"

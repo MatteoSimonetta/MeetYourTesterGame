@@ -76,6 +76,7 @@ layout_mode = 2
 texture_normal = ExtResource("2_mnuxq")
 script = ExtResource("13_5hktr")
 DifficultyLevel = 1
+NextScenePath = "uid://dpyn1enbx4w7u"
 
 [node name="CenterEasyLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -86,12 +87,14 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("1_bqnr1")
 script = ExtResource("13_5hktr")
 DifficultyLevel = 1
+NextScenePath = "uid://dpyn1enbx4w7u"
 
 [node name="MediumIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("7_j6g5n")
 script = ExtResource("13_5hktr")
 DifficultyLevel = 2
+NextScenePath = "uid://dpyn1enbx4w7u"
 
 [node name="CenterMediumLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -102,12 +105,14 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("2_ggpfl")
 script = ExtResource("13_5hktr")
 DifficultyLevel = 2
+NextScenePath = "uid://dpyn1enbx4w7u"
 
 [node name="HardIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("11_kw371")
 script = ExtResource("13_5hktr")
 DifficultyLevel = 3
+NextScenePath = "uid://dpyn1enbx4w7u"
 
 [node name="CenterHardLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -118,11 +123,13 @@ size_flags_horizontal = 8
 texture_normal = ExtResource("3_m4dx8")
 script = ExtResource("13_5hktr")
 DifficultyLevel = 3
+NextScenePath = "uid://dpyn1enbx4w7u"
 
 [node name="CancelIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("15_aikcy")
 script = ExtResource("13_5hktr")
+NextScenePath = "uid://xlf3saf5tm6e"
 
 [node name="CenterCancelLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -132,6 +139,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("4_w18dt")
 script = ExtResource("13_5hktr")
+NextScenePath = "uid://xlf3saf5tm6e"
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 anchors_preset = 2
@@ -218,6 +226,6 @@ texture = ExtResource("23_f0m7b")
 [connection signal="mouse_entered" from="DiffBtns/CancelIcon" to="." method="OnDiffBtnMouseEntered" binds= [0]]
 [connection signal="mouse_exited" from="DiffBtns/CancelIcon" to="." method="OnDiffBtnMouseExited" binds= [0]]
 [connection signal="pressed" from="DiffBtns/CancelIcon" to="DiffBtns/CancelIcon" method="OnButtonPressed"]
-[connection signal="mouse_entered" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="OnDiffBtnMouseEntered"]
-[connection signal="mouse_exited" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="OnDiffBtnMouseExited"]
+[connection signal="mouse_entered" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="OnDiffBtnMouseEntered" binds= [0]]
+[connection signal="mouse_exited" from="DiffBtns/CenterCancelLabel/CancelBtn" to="." method="OnDiffBtnMouseExited" binds= [0]]
 [connection signal="pressed" from="DiffBtns/CenterCancelLabel/CancelBtn" to="DiffBtns/CenterCancelLabel/CancelBtn" method="OnButtonPressed"]
