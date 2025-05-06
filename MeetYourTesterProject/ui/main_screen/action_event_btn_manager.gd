@@ -21,7 +21,7 @@ func _ready():
 func _process(delta):
 	pass
 	
-func _on_timer_timeout():
+func OnTimerTimeout():
 	if !is_action_event_generated:
 		startSoundSpawnEvent()
 		generate_action_event()
