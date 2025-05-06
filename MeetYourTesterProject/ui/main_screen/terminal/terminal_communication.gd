@@ -29,4 +29,3 @@ func handle_event_from_action_event(event_params:Dictionary):
 	var event_questions = Globals.questions[event_name]
 	# send signal to terminal to show the questions
 	$terminal_content.handle_event_from_action_event(event_name,event_questions)
-
