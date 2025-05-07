@@ -13,7 +13,7 @@ public partial class TimerController : Node
         mainGameScene = GetNode("../../..");
         timerNode = GetNode<Timer>("TimerNode");
 
-        mainGameScene.Connect("game_pause_changed", new Callable(this, nameof(CatchPauseChanged)));
+        mainGameScene.Connect("GamePauseChanged", new Callable(this, nameof(CatchPauseChanged)));
     }
 
     // This function is assumed to be connected in the editor to the timeout() signal of TimerNode

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://wgpfvhfu1oi6" path="res://images/game-map/time/timer.svg" id="1_lc3b6"]
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="1_tp77f"]
 [ext_resource type="Texture2D" uid="uid://b46cjpn0dkvib" path="res://images/game-map/time/speed.svg" id="3_ps3v0"]
-[ext_resource type="Script" uid="uid://b3wn0l25hlgbj" path="res://ui/main_screen/timer_btns.gd" id="3_svwg2"]
 [ext_resource type="Script" uid="uid://dx7hpm4h7vqsr" path="res://ui/main_screen/TimerController.cs" id="4_i07pr"]
+[ext_resource type="Script" uid="uid://dkla25bmwhac5" path="res://ui/main_screen/TimerBtns.cs" id="5_jfsr8"]
 [ext_resource type="Texture2D" uid="uid://beevq6x3iexl0" path="res://images/main-game/hex-cell-small.svg" id="7_cf20c"]
 [ext_resource type="AudioStream" uid="uid://ckfa8saj8axfy" path="res://sounds/clickHexagon.mp3" id="7_v2lef"]
 [ext_resource type="Texture2D" uid="uid://cggemgu6mwcp" path="res://images/game-map/notification-hex/hex-cell-database-notifiaction.svg" id="8_5sr2y"]
@@ -95,12 +95,12 @@ autostart = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 texture_normal = SubResource("CompressedTexture2D_wlhim")
-script = ExtResource("3_svwg2")
+script = ExtResource("5_jfsr8")
 
 [node name="SpeedUpBtn" type="TextureButton" parent="Sprite2D/TimerContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_ps3v0")
-script = ExtResource("3_svwg2")
+script = ExtResource("5_jfsr8")
 
 [node name="MainControl" type="Control" parent="."]
 layout_mode = 3
@@ -537,9 +537,6 @@ texture_normal = ExtResource("49_ql2w8")
 texture_hover = ExtResource("50_bbsnt")
 
 [connection signal="timeout" from="Sprite2D/TimerContainer/TimerLabel/TimerNode" to="Sprite2D/TimerContainer/TimerLabel" method="_on_timer_node_timeout"]
-[connection signal="pause_game" from="Sprite2D/TimerContainer/PlayPauseBtn" to="Sprite2D/TimerContainer/TimerLabel" method="catch_pause"]
-[connection signal="unpause_game" from="Sprite2D/TimerContainer/PlayPauseBtn" to="Sprite2D/TimerContainer/TimerLabel" method="catch_unpause"]
-[connection signal="speed_up_game" from="Sprite2D/TimerContainer/SpeedUpBtn" to="Sprite2D/TimerContainer/TimerLabel" method="catch_speed_change"]
 [connection signal="timeout" from="MainControl/Database/Label/Timer" to="MainControl/Database" method="OnTimerTimeout"]
 [connection signal="timeout" from="MainControl/Delivery/Label/Timer" to="MainControl/Delivery" method="OnTimerTimeout"]
 [connection signal="timeout" from="MainControl/Business_Logic/Label/Timer" to="MainControl/Business_Logic" method="OnTimerTimeout"]

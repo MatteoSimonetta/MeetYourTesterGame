@@ -38,7 +38,7 @@ public partial class TerminalCommunication : Node2D
         // Connect each hexagon signal
         foreach (var hex in hexList)
         {
-            hex.Connect("hexagon_clicked", new Callable(this, nameof(HandleEventFromActionEvent)));
+            hex.Connect("HexagonClicked", new Callable(this, nameof(HandleEventFromActionEvent)));
         }
     }
 
