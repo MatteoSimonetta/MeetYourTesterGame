@@ -139,6 +139,14 @@ public partial class ProgressBarControl : Control
         {
             var key = $"deadline_{i}";
             var deadlineEntry = (Dictionary)Globals.Instance.Deadlines[i];
+            GD.Print($"Deadline entry {i}: {deadlineEntry}");
+
+            if (!deadlineEntry.ContainsKey(key))
+            {
+                GD.PushWarning($"Missing expected key '{key}' in Globals.Instance.Deadlines[{i}]. Skipping entry.");
+                continue;
+            }
+
             var deadlineData = deadlineEntry[key];
             var deadlineDict = (Dictionary)deadlineData;
 
