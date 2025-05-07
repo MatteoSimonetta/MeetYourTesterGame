@@ -3,8 +3,8 @@ using System;
 
 public partial class InitCountdown : Timer
 {
-    private Button playPauseBtn;
-    private Button speedUpBtn;
+    private TextureButton playPauseBtn;
+    private TextureButton speedUpBtn;
     private Node terminal;
     private Node mainGameScene;
     private Node hexParent;
@@ -18,17 +18,17 @@ public partial class InitCountdown : Timer
         WaitTime = rng.Randi() % Globals.Instance.RandomTimerForActionEventInactivity;
         Start();
 
-        playPauseBtn = GetNode<Button>("../../../../Sprite2D/TimerContainer/PlayPauseBtn");
-        speedUpBtn = GetNode<Button>("../../../../Sprite2D/TimerContainer/SpeedUpBtn");
+        playPauseBtn = GetNode<TextureButton>("../../../../Sprite2D/TimerContainer/PlayPauseBtn");
+        speedUpBtn = GetNode<TextureButton>("../../../../Sprite2D/TimerContainer/SpeedUpBtn");
         terminal = GetNode("../../../../Terminal/_terminal_mock/terminal_content");
         mainGameScene = GetNode("../../../..");
         hexParent = GetParent().GetParent();
 
-        playPauseBtn.Connect("pause_game", new Callable(this, nameof(StopResumeTimer)));
-        playPauseBtn.Connect("unpause_game", new Callable(this, nameof(StopResumeTimer)));
-        mainGameScene.Connect("game_pause_changed", new Callable(this, nameof(StopResumeTimer)));
+        playPauseBtn.Connect("PauseGame", new Callable(this, nameof(StopResumeTimer)));
+        playPauseBtn.Connect("UnpauseGame", new Callable(this, nameof(StopResumeTimer)));
+        mainGameScene.Connect("GamePauseChanged", new Callable(this, nameof(StopResumeTimer)));
         terminal.Connect("answer_signal", new Callable(this, nameof(HandleAnswerStopResume)));
-        hexParent.Connect("hexagon_clicked", new Callable(this, nameof(HandleHexagonClick)));
+        hexParent.Connect("HexagonClicked", new Callable(this, nameof(HandleHexagonClick)));
     }
 
     public override void _Process(double delta)
