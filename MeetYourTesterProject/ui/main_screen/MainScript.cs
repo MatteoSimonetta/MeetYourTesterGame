@@ -33,9 +33,9 @@ public partial class MainScript : Node
 
         // Signal Connections
         exitMenu.Connect("ResumeFromQuitPrompt", new Callable(this, nameof(Resume)));
-        progressBarControlNode.Connect("last_deadline_missed", new Callable(this, nameof(HandleLastDeadlineMissed)));
+        progressBarControlNode.Connect("LastDeadlineMissed", new Callable(this, nameof(HandleLastDeadlineMissed)));
         anonymityControlNode.Connect("anon_value_update", new Callable(this, nameof(CheckAnonymityValue)));
-        progressBarControlNode.Connect("progress_bar_limit_reached", new Callable(this, nameof(HandleProgressBarLimitReached)));
+        progressBarControlNode.Connect("ProgressBarLimitReached", new Callable(this, nameof(HandleProgressBarLimitReached)));
 
         pauseMenu.Visible = false;
         pauseMenu.Connect("ResumeGame", new Callable(this, nameof(Resume)));
