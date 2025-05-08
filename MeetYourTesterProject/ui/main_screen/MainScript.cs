@@ -10,26 +10,26 @@ public partial class MainScript : Node
     public delegate void EndGameEventHandler(int type);
 
     // === Node References ===
-    private Control exitMenu;
+    private ExitMenuScene exitMenu;
     private Node mainControl;
     private Node timerControl;
     private Node terminalControl;
     private Node anonymityControlNode;
     private Node progressBarControlNode;
-    private Control pauseMenu;
-    private Control tutorialSceneContainer;
+    private GamePauseMenuScene pauseMenu;
+    private Node2D tutorialSceneContainer;
 
     public override void _Ready()
     {
         // OnReady node assignments
-        exitMenu = GetNode<Control>("ExitPrompt/exit_menu");
+        exitMenu = GetNode<ExitMenuScene>("ExitPrompt/exit_menu");
         mainControl = GetNode<Node>("MainControl");
         timerControl = GetNode<Node>("Sprite2D");
         terminalControl = GetNode<Node>("Terminal");
         anonymityControlNode = GetNode<Node>("AnonymityBarControl");
         progressBarControlNode = GetNode<Node>("ProgressBarControl");
-        pauseMenu = GetNode<Control>("PauseMenu");
-        tutorialSceneContainer = GetNode<Control>("TutorialSceneContainer");
+        pauseMenu = GetNode<GamePauseMenuScene>("PauseMenu");
+        tutorialSceneContainer = GetNode<Node2D>("TutorialSceneContainer");
 
         // Signal Connections
         exitMenu.Connect("ResumeFromQuitPrompt", new Callable(this, nameof(Resume)));

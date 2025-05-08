@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ExitMenuScene : Node
+public partial class ExitMenuScene : Node2D
 {
     [Signal]
     public delegate void ResumeFromQuitPromptEventHandler();

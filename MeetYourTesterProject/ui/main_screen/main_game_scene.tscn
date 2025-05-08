@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dpyn1enbx4w7u"]
+[gd_scene load_steps=53 format=3 uid="uid://dpyn1enbx4w7u"]
 
 [ext_resource type="Script" uid="uid://bltotg3dw2yf8" path="res://ui/main_screen/MainScript.cs" id="1_i07pr"]
 [ext_resource type="Texture2D" uid="uid://wgpfvhfu1oi6" path="res://images/game-map/time/timer.svg" id="1_lc3b6"]
@@ -48,6 +48,7 @@
 [ext_resource type="Script" uid="uid://bhrckisq26rwg" path="res://BackgroundAudioController/BackgroundAudio.cs" id="44_i07pr"]
 [ext_resource type="PackedScene" uid="uid://joo288j0m3hc" path="res://ui/menus/tutorial_scene.tscn" id="47_0rulr"]
 [ext_resource type="Script" uid="uid://dypiebbodpxln" path="res://ui/main_screen/close_ingame_tutorial.gd" id="47_2j76q"]
+[ext_resource type="Script" uid="uid://dgeow1smhdjp2" path="res://ui/menus/TutorialScene.cs" id="49_jfsr8"]
 [ext_resource type="Texture2D" uid="uid://bvbpeochd8uco" path="res://images/tutorial-popup/tutorial_quit_base.svg" id="49_ql2w8"]
 [ext_resource type="Texture2D" uid="uid://bsxeji5ycy34i" path="res://images/tutorial-popup/tutorial_quit_hover.svg" id="50_bbsnt"]
 
@@ -527,6 +528,7 @@ visible = false
 script = ExtResource("47_2j76q")
 
 [node name="TutorialScene" parent="TutorialSceneContainer" instance=ExtResource("47_0rulr")]
+script = ExtResource("49_jfsr8")
 
 [node name="TextureButton" type="TextureButton" parent="TutorialSceneContainer"]
 offset_left = 1612.0

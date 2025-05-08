@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var current_tutorial_screen_idx = 0;
 var speed = 16
