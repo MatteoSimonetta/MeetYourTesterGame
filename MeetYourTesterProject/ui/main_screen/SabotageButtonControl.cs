@@ -26,7 +26,7 @@ public partial class SabotageButtonControl : Control
         anonBar = GetNode<TextureProgressBar>("SabotageButton/AnonymityBar");
 
         progressBarControlNode.Connect("DeadlineMissed", new Callable(this, nameof(HandleDeadlineMissed)));
-        anonimityNode.Connect("anon_value_update", new Callable(this, nameof(HandleAnonValueUpdate)));
+        anonimityNode.Connect("AnonValueUpdate", new Callable(this, nameof(HandleAnonValueUpdate)));
 
         chargeCount = 0;
     }

@@ -29,13 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://newdc3qfq08j" path="res://ui/main_screen/terminal/terminal_mock.tscn" id="26_lb6pa"]
 [ext_resource type="Texture2D" uid="uid://cy3cktjlojmph" path="res://images/main-game/progress-bar/yellow-bars-neutral.svg" id="26_r8fpx"]
 [ext_resource type="Texture2D" uid="uid://7o56brbyyo2q" path="res://images/main-game/progress-bar/progress-bar-frame.svg" id="27_1f572"]
-[ext_resource type="Script" uid="uid://cp7ckpf1e7tb6" path="res://ui/main_screen/anonymity_value.gd" id="27_4w0dy"]
 [ext_resource type="Script" uid="uid://bwqvpix0mqw52" path="res://ui/main_screen/DEBUG_BUTTON_PROGRESS_PLUS.gd" id="28_cxtu7"]
 [ext_resource type="Texture2D" uid="uid://bfdojxvh0t1t1" path="res://images/sabotage-buttons/charge-empty.svg" id="29_uhnp3"]
 [ext_resource type="Texture2D" uid="uid://c0qscxdhe0y0b" path="res://images/sabotage-buttons/sabotage-btn.svg" id="30_1i0ej"]
 [ext_resource type="Texture2D" uid="uid://c7ibmmf7nuqw" path="res://images/sabotage-buttons/sabotage-btn-enabled.svg" id="30_f8a6t"]
 [ext_resource type="Script" uid="uid://bkye6susow8x2" path="res://ui/main_screen/SabotageButtonControl.cs" id="31_g1nb2"]
 [ext_resource type="Texture2D" uid="uid://bituwj1ulonvo" path="res://images/sabotage-buttons/anonymity-fill.svg" id="32_0d254"]
+[ext_resource type="Script" uid="uid://eikjvm5lbsep" path="res://ui/main_screen/AnonymityValue.cs" id="32_jfsr8"]
 [ext_resource type="Texture2D" uid="uid://dvgajhh78c4wt" path="res://images/sabotage-buttons/sabotage-icon.svg" id="32_tfymk"]
 [ext_resource type="PackedScene" uid="uid://btqfn1y8mwiih" path="res://ui/menus/exit_menu_scene.tscn" id="34_n0pnv"]
 [ext_resource type="AudioStream" uid="uid://d044b2aeveg6j" path="res://sounds/spawnHexagon.mp3" id="38_nnwxb"]
@@ -415,7 +415,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("27_4w0dy")
+script = ExtResource("32_jfsr8")
 
 [node name="AnonymityValue" type="RichTextLabel" parent="AnonymityBarControl"]
 layout_mode = 0
