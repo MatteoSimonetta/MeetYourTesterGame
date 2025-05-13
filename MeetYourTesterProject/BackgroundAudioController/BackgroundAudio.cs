@@ -3,9 +3,18 @@ using System;
 
 public partial class BackgroundAudio : Node
 {
+    private AudioStreamPlayer music;
+
+    public override void _Ready()
+    {
+        music = GetNodeOrNull<AudioStreamPlayer>("Music");
+        if (music == null)
+            GD.PrintErr("Music node not found in BackgroundAudio!");
+    }
+                                                                                     
     public override void _Process(double delta)
     {
-        var music = GetNode<AudioStreamPlayer>("Music");
-        music.VolumeDb = Globals.Instance.BgMusicVolume;
+        if (music != null)
+            music.VolumeDb = Globals.Instance.BgMusicVolume;
     }
 }
