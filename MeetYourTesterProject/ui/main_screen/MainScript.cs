@@ -17,7 +17,7 @@ public partial class MainScript : Node
     private Node anonymityControlNode;
     private Node progressBarControlNode;
     private GamePauseMenuScene pauseMenu;
-    private Node2D tutorialSceneContainer;
+    private CloseIngameTutorial tutorialSceneContainer;
 
     public override void _Ready()
     {
@@ -29,7 +29,7 @@ public partial class MainScript : Node
         anonymityControlNode = GetNode<Node>("AnonymityBarControl");
         progressBarControlNode = GetNode<Node>("ProgressBarControl");
         pauseMenu = GetNode<GamePauseMenuScene>("PauseMenu");
-        tutorialSceneContainer = GetNode<Node2D>("TutorialSceneContainer");
+        tutorialSceneContainer = GetNode<CloseIngameTutorial>("TutorialSceneContainer");
 
         // Signal Connections
         exitMenu.Connect("ResumeFromQuitPrompt", new Callable(this, nameof(Resume)));
@@ -39,7 +39,7 @@ public partial class MainScript : Node
 
         pauseMenu.Visible = false;
         pauseMenu.Connect("ResumeGame", new Callable(this, nameof(Resume)));
-        tutorialSceneContainer.Connect("resume_game", new Callable(this, nameof(Resume)));
+        tutorialSceneContainer.Connect("ResumeGame", new Callable(this, nameof(Resume)));
         pauseMenu.Connect("OpenTutorial", new Callable(this, nameof(HandleOpenTutorial)));
         pauseMenu.Connect("Quit", new Callable(this, nameof(HandleQuit)));
     }
@@ -65,8 +65,13 @@ public partial class MainScript : Node
     {
         Globals.Instance.GamePaused = false;
 
-        foreach (Node2D child in GetChildren())
-            child.Visible = true;
+        foreach (Node child in GetChildren())
+        {
+            if (child is CanvasItem canvasItem)
+            {
+                canvasItem.Visible = true;
+            }
+        }
 
         exitMenu.Visible = false;
         pauseMenu.Visible = false;
@@ -91,8 +96,13 @@ public partial class MainScript : Node
     {
         pauseMenu.Visible = false;
 
-        foreach (Node2D child in GetChildren())
-            child.Visible = false;
+        foreach (Node child in GetChildren())
+        {
+            if (child is CanvasItem canvasItem)
+            {
+                canvasItem.Visible = false;
+            }
+        }
 
         tutorialSceneContainer.Visible = true;
     }
@@ -129,7 +139,7 @@ public partial class MainScript : Node
         foreach (string system in subsystems)
         {
             Node node = mainControl.GetNode<Node>(system);
-            node.Call("handle_game_exit", exitMenu.Visible || pauseMenu.Visible);
+            node.Call("HandleGameExit", exitMenu.Visible || pauseMenu.Visible);
         }
     }
 }

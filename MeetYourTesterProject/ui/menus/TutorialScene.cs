@@ -2,7 +2,7 @@ using Godot;
 using System;
 using Godot.Collections;
 
-public partial class TutorialScene : Node2D
+public partial class TutorialScene : Node
 {
     private int currentTutorialScreenIdx = 0;
     private int speed = 16;
@@ -100,7 +100,7 @@ public partial class TutorialScene : Node2D
         highlight.RotationDegrees = (float)arrowPos["rot"];
         highlight.Position = new Vector2((float)arrowPos["x"], (float)arrowPos["y"]);
 
-        GetNode<RichTextLabel>("Popup/TutorialBody").Text = tutorialCurrentText;
+        GetNode<Label>("Popup/TutorialBody").Text = tutorialCurrentText;
 
         var popup = GetNode<Control>("Popup");
         float scale = (float)popupData["scale"];

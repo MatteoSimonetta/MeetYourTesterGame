@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dpyn1enbx4w7u"]
+[gd_scene load_steps=52 format=3 uid="uid://dpyn1enbx4w7u"]
 
 [ext_resource type="Script" uid="uid://bltotg3dw2yf8" path="res://ui/main_screen/MainScript.cs" id="1_i07pr"]
 [ext_resource type="Texture2D" uid="uid://wgpfvhfu1oi6" path="res://images/game-map/time/timer.svg" id="1_lc3b6"]
@@ -43,12 +43,11 @@
 [ext_resource type="Texture2D" uid="uid://dm08vphfeq42v" path="res://images/music-sounds/SoundEffetcActivated.svg" id="40_46sr3"]
 [ext_resource type="PackedScene" uid="uid://6rm227g8xbny" path="res://ui/menus/game_pause_menu_scene.tscn" id="40_ur83x"]
 [ext_resource type="Texture2D" uid="uid://cjv8slc8lv7yw" path="res://images/music-sounds/MusicActivated.svg" id="41_743m6"]
-[ext_resource type="Script" uid="uid://du1irdsrseu8f" path="res://ui/main_screen/SoundEffectControl.gd" id="41_kxsxo"]
+[ext_resource type="Script" uid="uid://cc3g5e84mdfvc" path="res://ui/main_screen/SoundEffectControl.cs" id="41_kxsxo"]
 [ext_resource type="Texture2D" uid="uid://c8dl7a5ghe0f0" path="res://images/music-sounds/MusicDeactivated.svg" id="42_eebn0"]
 [ext_resource type="Script" uid="uid://bhrckisq26rwg" path="res://BackgroundAudioController/BackgroundAudio.cs" id="44_i07pr"]
 [ext_resource type="PackedScene" uid="uid://joo288j0m3hc" path="res://ui/menus/tutorial_scene.tscn" id="47_0rulr"]
-[ext_resource type="Script" uid="uid://dypiebbodpxln" path="res://ui/main_screen/close_ingame_tutorial.gd" id="47_2j76q"]
-[ext_resource type="Script" uid="uid://dgeow1smhdjp2" path="res://ui/menus/TutorialScene.cs" id="49_jfsr8"]
+[ext_resource type="Script" uid="uid://b68vfp2vm53mh" path="res://ui/main_screen/CloseIngameTutorial.cs" id="47_i07pr"]
 [ext_resource type="Texture2D" uid="uid://bvbpeochd8uco" path="res://images/tutorial-popup/tutorial_quit_base.svg" id="49_ql2w8"]
 [ext_resource type="Texture2D" uid="uid://bsxeji5ycy34i" path="res://images/tutorial-popup/tutorial_quit_hover.svg" id="50_bbsnt"]
 
@@ -65,6 +64,7 @@ stream = ExtResource("1_tp77f")
 autoplay = true
 expand = true
 loop = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lc3b6")
@@ -525,10 +525,9 @@ visible = false
 
 [node name="TutorialSceneContainer" type="Node2D" parent="."]
 visible = false
-script = ExtResource("47_2j76q")
+script = ExtResource("47_i07pr")
 
 [node name="TutorialScene" parent="TutorialSceneContainer" instance=ExtResource("47_0rulr")]
-script = ExtResource("49_jfsr8")
 
 [node name="TextureButton" type="TextureButton" parent="TutorialSceneContainer"]
 offset_left = 1612.0
