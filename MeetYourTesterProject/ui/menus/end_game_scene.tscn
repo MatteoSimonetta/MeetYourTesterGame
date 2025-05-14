@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://l258rynkaodr"]
 
-[ext_resource type="Script" uid="uid://chjsjradtc4bv" path="res://ui/menus/end_game_scene.gd" id="1_lykmd"]
+[ext_resource type="Script" uid="uid://boqtn54oum8u0" path="res://ui/menus/end_game_scene.gd" id="1_lykmd"]
 [ext_resource type="Texture2D" uid="uid://0ly6ybhoh5ws" path="res://images/background/overlay.svg" id="2_lodd5"]
 [ext_resource type="Texture2D" uid="uid://dibo524jg52dl" path="res://images/end-game/end-screen-sabotage.svg" id="3_tpfw7"]
 [ext_resource type="Texture2D" uid="uid://idhbnxbj0ri6" path="res://images/end-game/btn-retry.svg" id="5_25ceo"]
