@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://l258rynkaodr"]
 
-[ext_resource type="Script" uid="uid://boqtn54oum8u0" path="res://ui/menus/end_game_scene.gd" id="1_lykmd"]
+[ext_resource type="Script" uid="uid://boqtn54oum8u0" path="res://ui/menus/EndGameScene.cs" id="1_lykmd"]
 [ext_resource type="Texture2D" uid="uid://0ly6ybhoh5ws" path="res://images/background/overlay.svg" id="2_lodd5"]
 [ext_resource type="Texture2D" uid="uid://dibo524jg52dl" path="res://images/end-game/end-screen-sabotage.svg" id="3_tpfw7"]
 [ext_resource type="Texture2D" uid="uid://idhbnxbj0ri6" path="res://images/end-game/btn-retry.svg" id="5_25ceo"]
@@ -80,5 +80,5 @@ theme_override_fonts/font = ExtResource("12_x3d88")
 theme_override_font_sizes/font_size = 24
 autowrap_mode = 3
 
-[connection signal="pressed" from="btn-retry" to="." method="_on_restart_game_button_pressed"]
-[connection signal="pressed" from="btn-back" to="." method="_on_back_to_menu_button_pressed"]
+[connection signal="pressed" from="btn-retry" to="." method="OnRestartGameButtonPressed"]
+[connection signal="pressed" from="btn-back" to="." method="OnBackToMenuButtonPressed"]
