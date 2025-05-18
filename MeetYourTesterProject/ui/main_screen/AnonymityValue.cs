@@ -12,7 +12,7 @@ public partial class AnonymityValue : Control
     public override void _Ready()
     {
         terminal = GetNode("../Terminal/_terminal_mock/terminal_content");
-        terminal.Connect("answer_signal", new Callable(this, nameof(HandleAnswerSignal)));
+        terminal.Connect("AnswerSignal", new Callable(this, nameof(HandleAnswerSignal)));
     }
 
     private void HandleAnswerSignal(Dictionary selectedAnswer)
@@ -39,7 +39,7 @@ public partial class AnonymityValue : Control
             Globals.Instance.CurrentAnonymityValue = Globals.Instance.MaxAnonimityValue;
         }
 
-        GetChild<Label>(0).Text = $"Anonimity: {Globals.Instance.CurrentAnonymityValue}";
+        GetChild<Godot.RichTextLabel>(0).Text = $"Anonimity: {Globals.Instance.CurrentAnonymityValue}";
         EmitSignal(SignalName.AnonValueUpdate);
     }
 }

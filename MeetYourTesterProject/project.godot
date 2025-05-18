@@ -23,6 +23,10 @@ Globals="*res://scripts/stores/Globals.cs"
 Utils="*res://scripts/stores/Utils.cs"
 BackgroundAudio="*res://BackgroundAudioController/BackgroundAudio.tscn"
 
+[debug]
+
+file_logging/enable_file_logging=true
+
 [display]
 
 window/size/viewport_width=1920
