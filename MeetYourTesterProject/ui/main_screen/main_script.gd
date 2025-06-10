@@ -14,15 +14,15 @@ signal end_game(type)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	exit_menu.connect("resume_from_quit_prompt", resume)
+	exit_menu.connect("ResumeFromQuitPrompt", resume)
 	progress_bar_control_node.connect("last_deadline_missed", handle_last_deadline_missed)
 	anonimity_control_node.connect("anon_value_update", check_anonimity_value)
 	progress_bar_control_node.connect("progress_bar_limit_reached", handle_progress_bar_limit_reached)
 	pause_menu.visible = false
-	pause_menu.connect("resume_game", resume)
+	pause_menu.connect("ResumeGame", resume)
 	tutorial_scene_container.connect("resume_game", resume)
-	pause_menu.connect("open_tutorial", handle_open_tutorial)
-	pause_menu.connect("quit", handle_quit)
+	pause_menu.connect("OpenTutorial", handle_open_tutorial)
+	pause_menu.connect("Quit", handle_quit)
 	
 
 func handle_quit():
