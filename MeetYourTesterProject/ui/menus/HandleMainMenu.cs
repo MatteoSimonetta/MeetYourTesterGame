@@ -33,7 +33,7 @@ public partial class HandleMainMenu : Node
         // Connect signals
         QuitSignal += DisableEverything;
         var exitMenuNode = exitMenu.GetNode("exit_menu");
-        exitMenuNode.Connect("resume_from_quit_prompt", new Callable(this, nameof(EnableEverything)));
+        exitMenuNode.Connect("ResumeFromQuitPrompt", new Callable(this, nameof(EnableEverything)));
         
         // Handle first-time startup configuration
         HandleFirstTimeStartup();
