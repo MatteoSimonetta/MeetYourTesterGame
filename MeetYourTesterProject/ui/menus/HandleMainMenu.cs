@@ -47,7 +47,7 @@ public partial class HandleMainMenu : Node
         if (err == Error.Ok)
         {
             var showPopup = config.GetValue("FirstStart", "show_popup");
-            if (!showPopup.AsBool())
+            if (showPopup.AsBool())
             {
                 ShowTutorialPopup();
                 config.SetValue("FirstStart", "show_popup", false);
