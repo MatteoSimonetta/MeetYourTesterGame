@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dn7esiiyigatj" path="res://images/start-scene/btn-icon-start-select.svg" id="4_eimxy"]
 [ext_resource type="Texture2D" uid="uid://bckjmmvhob7je" path="res://images/start-scene/btn-label-start.svg" id="4_yc4l4"]
 [ext_resource type="Texture2D" uid="uid://p1vy17eaqdmg" path="res://images/start-scene/btn-icon-tutorial.svg" id="5_e1mje"]
-[ext_resource type="Script" uid="uid://cuqetjcprxn7f" path="res://ui/menus/handle_main_menu.gd" id="5_wor2r"]
+[ext_resource type="Script" uid="uid://bms43dpmbrob1" path="res://ui/menus/HandleMainMenu.cs" id="5_wor2r"]
 [ext_resource type="Texture2D" uid="uid://cri1xp862ppn2" path="res://images/start-scene/btn-label-tutorial.svg" id="6_wn0v8"]
 [ext_resource type="Texture2D" uid="uid://3mhgjnmj42ky" path="res://images/start-scene/btn-icon-options.svg" id="7_cirhr"]
 [ext_resource type="Texture2D" uid="uid://qt4q5cgcfi1t" path="res://images/start-scene/btn-label-start-select.svg" id="7_hets2"]
