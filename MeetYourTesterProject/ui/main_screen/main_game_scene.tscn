@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cy3cktjlojmph" path="res://images/main-game/progress-bar/yellow-bars-neutral.svg" id="26_r8fpx"]
 [ext_resource type="Texture2D" uid="uid://7o56brbyyo2q" path="res://images/main-game/progress-bar/progress-bar-frame.svg" id="27_1f572"]
 [ext_resource type="Script" uid="uid://cp7ckpf1e7tb6" path="res://ui/main_screen/anonymity_value.gd" id="27_4w0dy"]
-[ext_resource type="Script" uid="uid://bwqvpix0mqw52" path="res://ui/main_screen/DEBUG_BUTTON_PROGRESS_PLUS.gd" id="28_cxtu7"]
+[ext_resource type="Script" uid="uid://h5yw3epyhxik" path="res://ui/main_screen/DebugButtonProgressPlus.cs" id="28_cxtu7"]
 [ext_resource type="Texture2D" uid="uid://bfdojxvh0t1t1" path="res://images/sabotage-buttons/charge-empty.svg" id="29_uhnp3"]
 [ext_resource type="Texture2D" uid="uid://c0qscxdhe0y0b" path="res://images/sabotage-buttons/sabotage-btn.svg" id="30_1i0ej"]
 [ext_resource type="Texture2D" uid="uid://c7ibmmf7nuqw" path="res://images/sabotage-buttons/sabotage-btn-enabled.svg" id="30_f8a6t"]
