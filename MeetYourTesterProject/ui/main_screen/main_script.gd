@@ -20,7 +20,7 @@ func _ready():
 	progress_bar_control_node.connect("progress_bar_limit_reached", handle_progress_bar_limit_reached)
 	pause_menu.visible = false
 	pause_menu.connect("ResumeGame", resume)
-	tutorial_scene_container.connect("resume_game", resume)
+	tutorial_scene_container.connect("ResumeGame", resume)
 	pause_menu.connect("OpenTutorial", handle_open_tutorial)
 	pause_menu.connect("Quit", handle_quit)
 	

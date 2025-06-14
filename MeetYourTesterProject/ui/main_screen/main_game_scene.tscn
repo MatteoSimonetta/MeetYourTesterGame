@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://c8dl7a5ghe0f0" path="res://images/music-sounds/MusicDeactivated.svg" id="42_eebn0"]
 [ext_resource type="Script" uid="uid://ob5ca5ddjmbw" path="res://ui/main_screen/BackgroundMusicControl.gd" id="44_0e055"]
 [ext_resource type="PackedScene" uid="uid://joo288j0m3hc" path="res://ui/menus/tutorial_scene.tscn" id="47_0rulr"]
-[ext_resource type="Script" uid="uid://dypiebbodpxln" path="res://ui/main_screen/close_ingame_tutorial.gd" id="47_2j76q"]
+[ext_resource type="Script" uid="uid://cadrippku6wxo" path="res://ui/main_screen/CloseIngameTutorial.cs" id="47_2j76q"]
 [ext_resource type="Texture2D" uid="uid://bvbpeochd8uco" path="res://images/tutorial-popup/tutorial_quit_base.svg" id="49_ql2w8"]
 [ext_resource type="Texture2D" uid="uid://bsxeji5ycy34i" path="res://images/tutorial-popup/tutorial_quit_hover.svg" id="50_bbsnt"]
 
