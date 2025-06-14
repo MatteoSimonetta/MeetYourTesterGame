@@ -4,7 +4,7 @@ extends Control
 signal anon_value_update
 
 func _ready():
-	terminal.connect("answer_signal", handle_answer_signal)
+	terminal.connect("AnswerSignal", handle_answer_signal)
  
 func handle_answer_signal(selected_answer: Dictionary):
 	# check if the signal is for anonimity bar

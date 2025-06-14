@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://newdc3qfq08j"]
 
 [ext_resource type="Texture2D" uid="uid://ciww7iw8ke16u" path="res://images/game-map/question-page/frame.svg" id="1_p1gv0"]
-[ext_resource type="Script" uid="uid://cygbt0x46ir5h" path="res://ui/main_screen/terminal/terminal_communication.gd" id="1_rdfio"]
-[ext_resource type="Script" uid="uid://ct7uodnr28r1b" path="res://ui/main_screen/terminal/handle_terminal.gd" id="3_oihmk"]
+[ext_resource type="Script" uid="uid://b8382spawmsuo" path="res://ui/main_screen/terminal/TerminalCommunication.cs" id="1_rdfio"]
+[ext_resource type="Script" uid="uid://cg00a4rsr8s88" path="res://ui/main_screen/terminal/HandleTerminal.cs" id="3_oihmk"]
 [ext_resource type="AudioStream" uid="uid://chrnvfhou1blg" path="res://sounds/clickAnswer.mp3" id="4_ehblv"]
 
 [node name="_terminal_mock" type="Node2D"]
@@ -32,5 +32,5 @@ script = ExtResource("3_oihmk")
 [node name="TerminalSelectedAnswerSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ehblv")
 
-[connection signal="answer_signal" from="terminal_content" to="." method="_on_terminal_content_answer_signal"]
+[connection signal="AnswerSignal" from="terminal_content" to="." method="_on_terminal_content_answer_signal"]
 [connection signal="meta_clicked" from="terminal_content" to="terminal_content" method="handle_meta_clicked"]

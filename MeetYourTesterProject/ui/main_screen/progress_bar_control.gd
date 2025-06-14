@@ -17,7 +17,7 @@ signal progress_bar_limit_reached
 signal last_deadline_missed
 
 func _ready():
-	terminal.connect("answer_signal", apply_progress_bar_effects)
+	terminal.connect("AnswerSignal", apply_progress_bar_effects)
 	for color in colors:
 		zone_dictionary[color] = {}
 		for size in sizes:
