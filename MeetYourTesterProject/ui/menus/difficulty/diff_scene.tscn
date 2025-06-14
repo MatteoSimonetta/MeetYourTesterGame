@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bpu6hoy7hrups" path="res://ui/menus/difficulty/HandleDifficulty.cs" id="2_ty5a8"]
 [ext_resource type="Texture2D" uid="uid://dt5pa0n2lmbrh" path="res://images/start-scene/btn-label-hard.svg" id="3_m4dx8"]
 [ext_resource type="Texture2D" uid="uid://b67femqvsaggk" path="res://images/start-scene/btn-label-cancel.svg" id="4_w18dt"]
-[ext_resource type="Script" uid="uid://062i2sumgi3w" path="res://ui/menus/difficulty/player_name_input.gd" id="6_ifxn4"]
+[ext_resource type="Script" uid="uid://drffgqalieib8" path="res://ui/menus/difficulty/PlayerNameInput.cs" id="6_ifxn4"]
 [ext_resource type="Texture2D" uid="uid://dna006taf11ie" path="res://images/start-scene/btn-icon-medium.svg" id="7_j6g5n"]
 [ext_resource type="Texture2D" uid="uid://cr7g7ytvi6pw1" path="res://images/start-scene/btn-icon-hard.svg" id="11_kw371"]
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="12_d3j0m"]
