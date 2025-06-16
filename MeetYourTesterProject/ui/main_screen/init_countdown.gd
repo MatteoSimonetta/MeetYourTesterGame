@@ -12,9 +12,9 @@ func _ready():
 	randomize()
 	self.wait_time = randi() % Globals.randomTimerForActionEventInactivity
 	self.start()
-	play_pause_btn.connect("pause_game", stop_resume_timer)
+	play_pause_btn.connect("PauseGame", stop_resume_timer)
 	main_game_scene.connect("game_pause_changed", stop_resume_timer)
-	play_pause_btn.connect("unpause_game", stop_resume_timer)
+	play_pause_btn.connect("UnpauseGame", stop_resume_timer)
 	terminal.connect("AnswerSignal", handle_answer_stop_resume)
 	hex_parent.connect("hexagon_clicked", handle_hexagon_click)
 	
@@ -43,4 +43,3 @@ func send_time_to_label():
 		sub_str = str(self.time_left).substr(0, 3)
 		
 	get_parent().text = sub_str
-
