@@ -12,7 +12,7 @@ var charge_limit_reached = Signal()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	progress_bar_control_node.connect("deadline_missed", _handle_deadline_missed)
-	anonimity_node.connect("anon_value_update", _handle_anon_value_update)
+	anonimity_node.connect("AnonValueUpdate", _handle_anon_value_update)
 	charge_count = 0
 
 func _handle_anon_value_update():

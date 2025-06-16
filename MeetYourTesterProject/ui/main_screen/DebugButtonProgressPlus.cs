@@ -53,7 +53,7 @@ public partial class DebugButtonProgressPlus : Button
     {
         if (anonymityNode != null)
         {
-            anonymityNode.Call("add_anonymity_value", 20);
+            anonymityNode.Call("AddAnonymityValue", 20);
         }
     }
 
@@ -61,7 +61,7 @@ public partial class DebugButtonProgressPlus : Button
     {
         if (anonymityNode != null)
         {
-            anonymityNode.Call("add_anonymity_value", -20);
+            anonymityNode.Call("AddAnonymityValue", -20);
         }
     }
 }

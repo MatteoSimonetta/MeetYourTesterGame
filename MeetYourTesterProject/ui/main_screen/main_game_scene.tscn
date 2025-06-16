@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://newdc3qfq08j" path="res://ui/main_screen/terminal/terminal_mock.tscn" id="26_lb6pa"]
 [ext_resource type="Texture2D" uid="uid://cy3cktjlojmph" path="res://images/main-game/progress-bar/yellow-bars-neutral.svg" id="26_r8fpx"]
 [ext_resource type="Texture2D" uid="uid://7o56brbyyo2q" path="res://images/main-game/progress-bar/progress-bar-frame.svg" id="27_1f572"]
-[ext_resource type="Script" uid="uid://cp7ckpf1e7tb6" path="res://ui/main_screen/anonymity_value.gd" id="27_4w0dy"]
+[ext_resource type="Script" uid="uid://3lkxtx3ffpdw" path="res://ui/main_screen/AnonymityValue.cs" id="27_4w0dy"]
 [ext_resource type="Script" uid="uid://h5yw3epyhxik" path="res://ui/main_screen/DebugButtonProgressPlus.cs" id="28_cxtu7"]
 [ext_resource type="Texture2D" uid="uid://bfdojxvh0t1t1" path="res://images/sabotage-buttons/charge-empty.svg" id="29_uhnp3"]
 [ext_resource type="Texture2D" uid="uid://c0qscxdhe0y0b" path="res://images/sabotage-buttons/sabotage-btn.svg" id="30_1i0ej"]

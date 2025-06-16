@@ -16,7 +16,7 @@ signal end_game(type)
 func _ready():
 	exit_menu.connect("ResumeFromQuitPrompt", resume)
 	progress_bar_control_node.connect("last_deadline_missed", handle_last_deadline_missed)
-	anonimity_control_node.connect("anon_value_update", check_anonimity_value)
+	anonimity_control_node.connect("AnonValueUpdate", check_anonimity_value)
 	progress_bar_control_node.connect("progress_bar_limit_reached", handle_progress_bar_limit_reached)
 	pause_menu.visible = false
 	pause_menu.connect("ResumeGame", resume)
