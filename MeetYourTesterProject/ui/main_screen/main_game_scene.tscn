@@ -5,7 +5,7 @@
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="1_tp77f"]
 [ext_resource type="Texture2D" uid="uid://b46cjpn0dkvib" path="res://images/game-map/time/speed.svg" id="3_ps3v0"]
 [ext_resource type="Script" uid="uid://coesin4intq60" path="res://ui/main_screen/TimerBtns.cs" id="3_svwg2"]
-[ext_resource type="Script" uid="uid://10qy4i6ohu1r" path="res://ui/main_screen/timer.gd" id="5_bt7jo"]
+[ext_resource type="Script" uid="uid://ddy34ql3ogg00" path="res://ui/main_screen/Timer.cs" id="5_bt7jo"]
 [ext_resource type="Texture2D" uid="uid://beevq6x3iexl0" path="res://images/main-game/hex-cell-small.svg" id="7_cf20c"]
 [ext_resource type="AudioStream" uid="uid://ckfa8saj8axfy" path="res://sounds/clickHexagon.mp3" id="7_v2lef"]
 [ext_resource type="Texture2D" uid="uid://cggemgu6mwcp" path="res://images/game-map/notification-hex/hex-cell-database-notifiaction.svg" id="8_5sr2y"]
@@ -537,6 +537,9 @@ texture_normal = ExtResource("49_ql2w8")
 texture_hover = ExtResource("50_bbsnt")
 
 [connection signal="timeout" from="Sprite2D/TimerContainer/TimerLabel/TimerNode" to="Sprite2D/TimerContainer/TimerLabel" method="_on_timer_node_timeout"]
+[connection signal="PauseGame" from="Sprite2D/TimerContainer/PlayPauseBtn" to="Sprite2D/TimerContainer/TimerLabel" method="CatchPause"]
+[connection signal="UnpauseGame" from="Sprite2D/TimerContainer/PlayPauseBtn" to="Sprite2D/TimerContainer/TimerLabel" method="CatchUnpause"]
+[connection signal="SpeedUpGame" from="Sprite2D/TimerContainer/SpeedUpBtn" to="Sprite2D/TimerContainer/TimerLabel" method="CatchSpeedChange"]
 [connection signal="timeout" from="MainControl/Database/Label/Timer" to="MainControl/Database" method="_on_timer_timeout"]
 [connection signal="timeout" from="MainControl/Delivery/Label/Timer" to="MainControl/Delivery" method="_on_timer_timeout"]
 [connection signal="timeout" from="MainControl/Business_Logic/Label/Timer" to="MainControl/Business_Logic" method="_on_timer_timeout"]
