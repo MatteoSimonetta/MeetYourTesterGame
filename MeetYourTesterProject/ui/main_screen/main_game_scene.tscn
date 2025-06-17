@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bmlybrtxl8cum" path="res://images/game-map/simple-hex/hex-cell-ui-ux.svg" id="16_ir080"]
 [ext_resource type="Texture2D" uid="uid://da7lgcc231bpm" path="res://images/game-map/notification-hex/hex-cell-backend-notifiaction.svg" id="17_3vmwg"]
 [ext_resource type="Texture2D" uid="uid://dk8drfc0yhdjy" path="res://images/game-map/selected-hex/hex-cell-ui-ux-selected.svg" id="17_udybg"]
-[ext_resource type="Script" uid="uid://b1bxos3as8imr" path="res://ui/main_screen/init_countdown.gd" id="18_0wahk"]
+[ext_resource type="Script" uid="uid://cujqkvuq4hfml" path="res://ui/main_screen/InitCountdown.cs" id="18_0wahk"]
 [ext_resource type="Script" uid="uid://5vdyq7gcdl4l" path="res://ui/main_screen/action_event_btn_manager.gd" id="18_nwfow"]
 [ext_resource type="Texture2D" uid="uid://dp3uujxgl4xqh" path="res://images/game-map/notification-hex/hex-cell-ux-notification.svg" id="20_ajqmu"]
 [ext_resource type="Script" uid="uid://c6gsfpn68c2jd" path="res://ui/main_screen/progress_bar_control.gd" id="25_n2qqa"]
