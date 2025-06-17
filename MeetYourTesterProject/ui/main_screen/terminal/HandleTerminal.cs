@@ -90,7 +90,7 @@ public partial class HandleTerminal : RichTextLabel
         var node = GetNode("../../../MainControl/" + eventName);
         if (node != null)
         {
-            node.Call("remove_action_event");
+            node.Call("RemoveActionEvent");
         }
         
         var answers = currentQuestion["answers"].AsGodotArray();
