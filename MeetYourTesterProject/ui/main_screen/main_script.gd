@@ -91,9 +91,9 @@ func resume():
 
 func manageHoverNodes():
 	print("HoverNodes")
-	$MainControl/Database.handle_game_exit(exit_menu.visible || pause_menu.visible)
-	$MainControl/Delivery.handle_game_exit(exit_menu.visible || pause_menu.visible)
-	$MainControl/Business_Logic.handle_game_exit(exit_menu.visible || pause_menu.visible)
-	$MainControl/Backend.handle_game_exit(exit_menu.visible || pause_menu.visible)
-	$MainControl/UI_UX.handle_game_exit(exit_menu.visible || pause_menu.visible)
+	$MainControl/Database.HandleGameExit(exit_menu.visible || pause_menu.visible)
+	$MainControl/Delivery.HandleGameExit(exit_menu.visible || pause_menu.visible)
+	$MainControl/Business_Logic.HandleGameExit(exit_menu.visible || pause_menu.visible)
+	$MainControl/Backend.HandleGameExit(exit_menu.visible || pause_menu.visible)
+	$MainControl/UI_UX.HandleGameExit(exit_menu.visible || pause_menu.visible)
 	

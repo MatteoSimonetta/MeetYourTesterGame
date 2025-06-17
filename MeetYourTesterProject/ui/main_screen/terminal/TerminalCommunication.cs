@@ -51,7 +51,7 @@ public partial class TerminalCommunication : Node2D
         // Connect terminal to each hexagon in game scene
         foreach (Node hex in hexList)
         {
-            hex.Connect("hexagon_clicked", new Callable(this, nameof(HandleEventFromActionEvent)));
+            hex.Connect("HexagonClicked", new Callable(this, nameof(HandleEventFromActionEvent)));
         }
     }
 

@@ -37,7 +37,7 @@ public partial class InitCountdown : Timer
 		mainGameScene.Connect("game_pause_changed", new Callable(this, nameof(StopResumeTimer)));
 		playPauseBtn.Connect("UnpauseGame", new Callable(this, nameof(StopResumeTimer)));
 		terminal.Connect("AnswerSignal", new Callable(this, nameof(HandleAnswerStopResume)));
-		hexParent.Connect("hexagon_clicked", new Callable(this, nameof(HandleHexagonClick)));
+		hexParent.Connect("HexagonClicked", new Callable(this, nameof(HandleHexagonClick)));
 	}
 
 	public override void _Process(double delta)
