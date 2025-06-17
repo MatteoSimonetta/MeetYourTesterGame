@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=3 uid="uid://dpyn1enbx4w7u"]
 
-[ext_resource type="Script" uid="uid://dt36hyiv1uhw4" path="res://ui/main_screen/main_script.gd" id="1_87vrv"]
+[ext_resource type="Script" uid="uid://cp0tl6evc3h7f" path="res://ui/main_screen/MainScript.cs" id="1_87vrv"]
 [ext_resource type="Texture2D" uid="uid://wgpfvhfu1oi6" path="res://images/game-map/time/timer.svg" id="1_lc3b6"]
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="1_tp77f"]
 [ext_resource type="Texture2D" uid="uid://b46cjpn0dkvib" path="res://images/game-map/time/speed.svg" id="3_ps3v0"]

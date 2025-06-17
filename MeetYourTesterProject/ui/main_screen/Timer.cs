@@ -20,7 +20,7 @@ public partial class Timer : Node
         mainGameScene = GetNode("../../..");
         
         // Connect to the game pause changed signal
-        mainGameScene.Connect("game_pause_changed", new Callable(this, nameof(CatchPauseChanged)));
+        mainGameScene.Connect("GamePauseChanged", new Callable(this, nameof(CatchPauseChanged)));
     }
 
     // Connected via Editor
