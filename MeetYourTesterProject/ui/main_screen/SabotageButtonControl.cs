@@ -32,7 +32,7 @@ public partial class SabotageButtonControl : Control
         anonBar = GetNode("SabotageButton/AnonymityBar");
         
         // Connect signals
-        progressBarControlNode.Connect("deadline_missed", new Callable(this, nameof(HandleDeadlineMissed)));
+        progressBarControlNode.Connect("DeadlineMissed", new Callable(this, nameof(HandleDeadlineMissed)));
         anonymityNode.Connect("AnonValueUpdate", new Callable(this, nameof(HandleAnonValueUpdate)));
         
         chargeCount = 0;

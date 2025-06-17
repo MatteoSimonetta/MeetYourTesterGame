@@ -31,7 +31,7 @@ public partial class Timer : Node
         globals.Set("gameTime", gameTime + 1);
         
         // Increment progress bar value
-        progressBar.Call("auto_increment");
+        progressBar.Call("AutoIncrement");
         
         // Update timer display text using Utils
         float currentGameTime = globals.Get("gameTime").AsSingle();

@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://cujqkvuq4hfml" path="res://ui/main_screen/InitCountdown.cs" id="18_0wahk"]
 [ext_resource type="Script" uid="uid://rt3olsw1gll4" path="res://ui/main_screen/ActionEventBtnManager.cs" id="18_nwfow"]
 [ext_resource type="Texture2D" uid="uid://dp3uujxgl4xqh" path="res://images/game-map/notification-hex/hex-cell-ux-notification.svg" id="20_ajqmu"]
-[ext_resource type="Script" uid="uid://c6gsfpn68c2jd" path="res://ui/main_screen/progress_bar_control.gd" id="25_n2qqa"]
+[ext_resource type="Script" uid="uid://d0ry5moxrvuup" path="res://ui/main_screen/ProgressBarControl.cs" id="25_n2qqa"]
 [ext_resource type="PackedScene" uid="uid://newdc3qfq08j" path="res://ui/main_screen/terminal/terminal_mock.tscn" id="26_lb6pa"]
 [ext_resource type="Texture2D" uid="uid://cy3cktjlojmph" path="res://images/main-game/progress-bar/yellow-bars-neutral.svg" id="26_r8fpx"]
 [ext_resource type="Texture2D" uid="uid://7o56brbyyo2q" path="res://images/main-game/progress-bar/progress-bar-frame.svg" id="27_1f572"]
