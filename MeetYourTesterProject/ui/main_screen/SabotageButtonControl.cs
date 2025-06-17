@@ -110,7 +110,7 @@ public partial class SabotageButtonControl : Control
         DecreaseChargeCount();
         
         int sabotageDecreaseValue = globals.Get("SABOTAGE_ANON_DECREASE_VALUE").AsInt32();
-        anonymityNode.Call("add_anonymity_value", -sabotageDecreaseValue);
+        anonymityNode.Call("AddAnonymityValue", -sabotageDecreaseValue);
         
         if (chargeCount == 0)
         {

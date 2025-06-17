@@ -521,6 +521,7 @@ script = ExtResource("44_0e055")
 visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("40_ur83x")]
+visible = false
 
 [node name="TutorialSceneContainer" type="Node2D" parent="."]
 visible = false
