@@ -48,6 +48,10 @@ public partial class MainScript : Node
         tutorialSceneContainer.Connect("ResumeGame", new Callable(this, nameof(Resume)));
         pauseMenu.Connect("OpenTutorial", new Callable(this, nameof(HandleOpenTutorial)));
         pauseMenu.Connect("Quit", new Callable(this, nameof(HandleQuit)));
+
+        // To activate music every time the game start
+        globals.Set("bg_music_volume", 0);
+        globals.Set("sound_fx_volume", -10);
     }
 
     private void HandleQuit()
