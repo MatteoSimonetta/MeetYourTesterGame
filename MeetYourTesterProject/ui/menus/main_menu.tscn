@@ -119,6 +119,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="tutorial_popup_scene" parent="TutorialPopup" instance=ExtResource("17_nfse2")]
+visible = false
 position = Vector2(-1, 2)
 
 [connection signal="mouse_entered" from="GridContainer/StartIcon" to="." method="_on_start_icon_mouse_entered"]

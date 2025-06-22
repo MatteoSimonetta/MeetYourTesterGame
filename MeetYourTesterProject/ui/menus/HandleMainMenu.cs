@@ -16,9 +16,6 @@ public partial class HandleMainMenu : Node
 
 	[Signal]
 	public delegate void QuitSignalEventHandler();
-	
-	[Signal]
-	public delegate void OpenTutorialEventHandler();
 
 	public override void _Ready()
 	{
@@ -216,7 +213,7 @@ public partial class HandleMainMenu : Node
 	private void _on_start_tutorial_pressed()
 	{
 		DebugPrint("Start tutorial");
-		EmitSignal(SignalName.OpenTutorial);
+		GetTree().ChangeSceneToFile("res://ui/menus/tutorial_scene.tscn");
 	}
 
 	private void DebugPrint(string msg)
