@@ -210,18 +210,6 @@ public partial class HandleMainMenu : Node
 		tutorialIcon.TextureNormal = GD.Load<Texture2D>("res://images/start-scene/btn-icon-tutorial.svg");
 	}
 	
-	// private void _on_start_tutorial_pressed()
-	// {
-	// 	DebugPrint("Start tutorial");
-	// 	globals.Set("previous_scene_path", "res://ui/menus/main_menu.tscn");
-	// 	globals.Set("previous_scene_node", this.GetParent());
-	// 	
-	// 	var tutorialScene = GD.Load<PackedScene>("res://ui/menus/tutorial_scene.tscn");
-	// 	var tutorialInstance = tutorialScene.Instantiate();
-	// 	GetParent().AddChild(tutorialInstance);
-	// 	GetParent().RemoveChild(this);
-	// 	// GetTree().ChangeSceneToFile("res://ui/menus/tutorial_scene.tscn");
-	// }
 	private void _on_start_tutorial_pressed()
 	{
 		DebugPrint("Start tutorial");
