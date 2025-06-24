@@ -13,9 +13,12 @@ public partial class TutorialScene : Node2D
 	private int currentTutorialContentLength = 0;
 	private Godot.Collections.Dictionary currentTutorialContent = null;
 	private Godot.Collections.Array jsonKeys = null;
+	private Node globals;
 
 	public override void _Ready()
 	{
+		globals = GetNode<Node>("/root/Globals");
+		
 		// Load and parse JSON file
 		string jsonString = FileAccess.GetFileAsString(tutorialFilePath);
 		var json = new Json();
@@ -52,23 +55,43 @@ public partial class TutorialScene : Node2D
 
 	private void ChangeScene(int offset = 1)
 	{
-		string childName = jsonKeys[currentTutorialScreenIdx].AsString();
-		
+		// Check bounds BEFORE accessing the array
 		if (currentTutorialScreenIdx <= 0 && offset < 0)
 		{
+			// At first screen going backward - return to previous scene
+			ReturnToPreviousScene();
 			return;
 		}
 		
 		if (currentTutorialScreenIdx >= jsonKeys.Count - 1 && offset > 0)
 		{
-			GetTree().ChangeSceneToFile("res://ui/menus/main_menu.tscn");
+			// At last screen going forward - return to previous scene
+			ReturnToPreviousScene();
 			return;
 		}
+		
+		// Now it's safe to access the array
+		string childName = jsonKeys[currentTutorialScreenIdx].AsString();
 		
 		// Hide the current scene
 		FindChild(childName).Set("visible", false);
 		
 		currentTutorialScreenIdx += offset;
+		
+		// Bounds check after increment/decrement
+		if (currentTutorialScreenIdx < 0)
+		{
+			currentTutorialScreenIdx = 0;
+			ReturnToPreviousScene();
+			return;
+		}
+		
+		if (currentTutorialScreenIdx >= jsonKeys.Count)
+		{
+			ReturnToPreviousScene();
+			return;
+		}
+		
 		childName = jsonKeys[currentTutorialScreenIdx].AsString();
 		
 		// Show new scene
@@ -89,6 +112,50 @@ public partial class TutorialScene : Node2D
 		ChangeTutorialData();
 	}
 
+	private void ReturnToPreviousScene()
+	{
+		// Get the stored previous scene node
+		var previousSceneNode = globals.Get("previous_scene_node");
+		
+		if (previousSceneNode.VariantType != Variant.Type.Nil && previousSceneNode.AsGodotObject() != null)
+		{
+			// Show the previous scene
+			if (previousSceneNode.AsGodotObject() is CanvasItem canvasItem)
+			{
+				canvasItem.Visible = true;
+			}
+			
+			// If it was a game scene, unpause it
+			var sceneNode = (Node)previousSceneNode;
+			if (sceneNode.HasMethod("Resume"))
+			{
+				sceneNode.Call("Resume");
+			}
+			
+			// Remove tutorial scene
+			this.QueueFree();
+		}
+		else
+		{
+			// Fallback: use scene path if node reference is lost
+			string previousScenePath = globals.Get("previous_scene_path").AsString();
+			if (!string.IsNullOrEmpty(previousScenePath))
+			{
+				GetTree().ChangeSceneToFile(previousScenePath);
+			}
+			else
+			{
+				// Final fallback: go to main menu
+				GetTree().ChangeSceneToFile("res://ui/menus/main_menu.tscn");
+			}
+		}
+		
+		// Clean up globals
+		globals.Set("previous_scene_node", new Variant());
+		globals.Set("previous_scene_path", "");
+		// globals.Set("gamePaused", false);
+	}
+
 	private void _on_previous_pressed()
 	{
 		ChangeScene(-1);
@@ -96,7 +163,7 @@ public partial class TutorialScene : Node2D
 
 	private void _on_next_pressed()
 	{
-		ChangeScene();
+		ChangeScene(1);
 	}
 
 	private void ChangeTutorialData()

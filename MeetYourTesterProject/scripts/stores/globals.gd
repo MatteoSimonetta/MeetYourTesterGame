@@ -44,3 +44,6 @@ var end_game_reason = null
 
 var bg_music_volume = 0
 var sound_fx_volume = 0
+
+var previous_scene_path = ""
+var previous_scene_node = null

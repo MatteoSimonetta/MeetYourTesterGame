@@ -210,10 +210,38 @@ public partial class HandleMainMenu : Node
 		tutorialIcon.TextureNormal = GD.Load<Texture2D>("res://images/start-scene/btn-icon-tutorial.svg");
 	}
 	
+	// private void _on_start_tutorial_pressed()
+	// {
+	// 	DebugPrint("Start tutorial");
+	// 	globals.Set("previous_scene_path", "res://ui/menus/main_menu.tscn");
+	// 	globals.Set("previous_scene_node", this.GetParent());
+	// 	
+	// 	var tutorialScene = GD.Load<PackedScene>("res://ui/menus/tutorial_scene.tscn");
+	// 	var tutorialInstance = tutorialScene.Instantiate();
+	// 	GetParent().AddChild(tutorialInstance);
+	// 	GetParent().RemoveChild(this);
+	// 	// GetTree().ChangeSceneToFile("res://ui/menus/tutorial_scene.tscn");
+	// }
 	private void _on_start_tutorial_pressed()
 	{
 		DebugPrint("Start tutorial");
-		GetTree().ChangeSceneToFile("res://ui/menus/tutorial_scene.tscn");
+
+		// Store information about the current scene
+		globals.Set("previous_scene_path", "res://ui/menus/main_menu.tscn");
+		globals.Set("previous_scene_node", this.GetParent()); // Store the entire main menu scene
+
+		// Load and instantiate tutorial scene
+		var tutorialScene = GD.Load<PackedScene>("res://ui/menus/tutorial_scene.tscn");
+		var tutorialInstance = tutorialScene.Instantiate();
+
+		// Add tutorial scene to the same parent (scene root)
+		GetParent().AddChild(tutorialInstance);
+
+		// Hide the current scene instead of removing it (to preserve state)
+		if (this.GetParent() is CanvasItem parentCanvas)
+		{
+			parentCanvas.Visible = false;
+		}
 	}
 
 	private void DebugPrint(string msg)
