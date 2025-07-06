@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://6rm227g8xbny"]
 
 [ext_resource type="Texture2D" uid="uid://bqr3h3k41im03" path="res://images/start-scene/menu-title.svg" id="1_3nvcc"]
-[ext_resource type="Script" uid="uid://c7hvmvvb6eupa" path="res://ui/menus/game_pause_menu_scene.gd" id="1_u4a75"]
+[ext_resource type="Script" uid="uid://cysjcpco16e1x" path="res://ui/menus/GamePauseMenuScene.cs" id="1_u4a75"]
 [ext_resource type="Texture2D" uid="uid://0ly6ybhoh5ws" path="res://images/background/overlay.svg" id="2_vtisi"]
 [ext_resource type="Texture2D" uid="uid://w27os7k3qrmp" path="res://images/pause-menu/btn-icon-return.svg" id="3_sa71o"]
 [ext_resource type="Texture2D" uid="uid://d0g8yqomrsgts" path="res://images/pause-menu/btn-icon-return-select.svg" id="4_7pq77"]

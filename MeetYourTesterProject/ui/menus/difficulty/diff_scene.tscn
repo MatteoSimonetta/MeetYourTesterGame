@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=3 uid="uid://doqt2siiqyb2a"]
 
-[ext_resource type="Script" uid="uid://bt0vx82l4el7d" path="res://ui/menus/difficulty/handle_difficulty_menu.gd" id="1_5jier"]
+[ext_resource type="Script" uid="uid://dsong5iygrl3p" path="res://ui/menus/difficulty/HandleDifficultyMenu.cs" id="1_5jier"]
 [ext_resource type="Texture2D" uid="uid://bc7s65ssh3cgh" path="res://images/start-scene/btn-label-easy.svg" id="1_bqnr1"]
 [ext_resource type="Texture2D" uid="uid://dfyql346x7kwp" path="res://images/start-scene/btn-label-medium.svg" id="2_ggpfl"]
 [ext_resource type="Texture2D" uid="uid://7o5q1rpboy3w" path="res://images/start-scene/btn-icon-easy.svg" id="2_mnuxq"]
-[ext_resource type="Script" uid="uid://xomlo7ji6q2n" path="res://ui/menus/difficulty/handle_difficulty.gd" id="2_ty5a8"]
+[ext_resource type="Script" uid="uid://bpu6hoy7hrups" path="res://ui/menus/difficulty/HandleDifficulty.cs" id="2_ty5a8"]
 [ext_resource type="Texture2D" uid="uid://dt5pa0n2lmbrh" path="res://images/start-scene/btn-label-hard.svg" id="3_m4dx8"]
 [ext_resource type="Texture2D" uid="uid://b67femqvsaggk" path="res://images/start-scene/btn-label-cancel.svg" id="4_w18dt"]
-[ext_resource type="Script" uid="uid://062i2sumgi3w" path="res://ui/menus/difficulty/player_name_input.gd" id="6_ifxn4"]
+[ext_resource type="Script" uid="uid://drffgqalieib8" path="res://ui/menus/difficulty/PlayerNameInput.cs" id="6_ifxn4"]
 [ext_resource type="Texture2D" uid="uid://dna006taf11ie" path="res://images/start-scene/btn-icon-medium.svg" id="7_j6g5n"]
 [ext_resource type="Texture2D" uid="uid://cr7g7ytvi6pw1" path="res://images/start-scene/btn-icon-hard.svg" id="11_kw371"]
 [ext_resource type="VideoStream" uid="uid://ddrq8jcssw82a" path="res://images/background/purple-nebula-background.ogv" id="12_d3j0m"]
@@ -75,8 +75,6 @@ columns = 2
 layout_mode = 2
 texture_normal = ExtResource("2_mnuxq")
 script = ExtResource("2_ty5a8")
-difficulty_level = 1
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
 
 [node name="CenterEasyLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -86,15 +84,13 @@ layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("1_bqnr1")
 script = ExtResource("2_ty5a8")
-difficulty_level = 1
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+DifficultyLevel = 1
+NextScenePath = "res://ui/main_screen/main_game_scene.tscn"
 
 [node name="MediumIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("7_j6g5n")
 script = ExtResource("2_ty5a8")
-difficulty_level = 2
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
 
 [node name="CenterMediumLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -104,15 +100,13 @@ layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("2_ggpfl")
 script = ExtResource("2_ty5a8")
-difficulty_level = 2
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+DifficultyLevel = 2
+NextScenePath = "res://ui/main_screen/main_game_scene.tscn"
 
 [node name="HardIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("11_kw371")
 script = ExtResource("2_ty5a8")
-difficulty_level = 3
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
 
 [node name="CenterHardLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -122,14 +116,13 @@ layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("3_m4dx8")
 script = ExtResource("2_ty5a8")
-difficulty_level = 3
-next_scene_path = "res://ui/main_screen/main_game_scene.tscn"
+DifficultyLevel = 3
+NextScenePath = "res://ui/main_screen/main_game_scene.tscn"
 
 [node name="CancelIcon" type="TextureButton" parent="DiffBtns"]
 layout_mode = 2
 texture_normal = ExtResource("15_aikcy")
 script = ExtResource("2_ty5a8")
-next_scene_path = "res://ui/menus/main_menu.tscn"
 
 [node name="CenterCancelLabel" type="CenterContainer" parent="DiffBtns"]
 layout_mode = 2
@@ -139,7 +132,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("4_w18dt")
 script = ExtResource("2_ty5a8")
-next_scene_path = "res://ui/menus/main_menu.tscn"
+NextScenePath = "res://ui/menus/main_menu.tscn"
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 anchors_preset = 2
