@@ -16,7 +16,11 @@ public partial class MainScript : Node
 	private Node progressBarControlNode;
 	private Node pauseMenu;
 	private Node tutorialSceneContainer;
-	
+
+	// NEW: keep refs so we can hide/show and clean up properly
+	private Node _previousScene;
+	private Node _tutorialInstance;
+
 	// Access to autoloaded GDScript singletons
 	private Node globals;
 	private Node utils;
@@ -62,25 +66,43 @@ public partial class MainScript : Node
 	
 	private void HandleOpenTutorial()
 	{
-		// pauseMenu.Set("visible", false);
-	
 		// Store current scene information
+		_previousScene = GetTree().CurrentScene;
 		globals.Set("previous_scene_path", "res://ui/main_screen/main_game_scene.tscn");
-		globals.Set("previous_scene_node", this.GetParent()); // Store the entire game scene
-	
-		// Pause the game state
-		// globals.Set("gamePaused", true);
-	
-		// Hide all children of the current scene instead of making them invisible
-		if (this.GetParent() is CanvasItem parentCanvas)
-		{
-			parentCanvas.Visible = false;
-		}
-	
-		// Load and add tutorial scene
+		globals.Set("previous_scene_node", _previousScene);
+
+		// Hide the entire game scene subtree (CanvasItems + CanvasLayers)
+		if (_previousScene != null)
+			SetSubtreeVisible(_previousScene, false);
+
+		// Load and add tutorial scene on top (at root)
 		var tutorialScene = GD.Load<PackedScene>("res://ui/menus/tutorial_scene.tscn");
-		var tutorialInstance = tutorialScene.Instantiate();
-		GetParent().AddChild(tutorialInstance);
+		_tutorialInstance = tutorialScene.Instantiate();
+		GetTree().Root.AddChild(_tutorialInstance);
+		GetTree().Root.MoveChild(_tutorialInstance, GetTree().Root.GetChildCount() - 1);
+
+		// Keep your pause bookkeeping
+		globals.Set("gamePaused", true);
+		GD.Print("Tutorial opened - game hidden");
+		EmitSignal(SignalName.GamePauseChanged);
+		utils.Call("pause", mainControl);
+		utils.Call("pause", timerControl);
+		utils.Call("pause", terminalControl);
+
+		// Hide pause menu if it was open
+		pauseMenu.Set("visible", false);
+
+		ManageHoverNodes();
+	}
+
+	// Helper: toggles visibility for every CanvasItem and CanvasLayer in a subtree
+	private void SetSubtreeVisible(Node root, bool visible)
+	{
+		if (root is CanvasItem ci) ci.Visible = visible;
+		if (root is CanvasLayer cl) cl.Visible = visible;
+
+		foreach (Node child in root.GetChildren())
+			SetSubtreeVisible(child, visible);
 	}
 
 	private void HandleLastDeadlineMissed()
@@ -126,17 +148,26 @@ public partial class MainScript : Node
 	private void Resume()
 	{
 		globals.Set("gamePaused", false);
-		
-		var children = GetChildren();
-		
-		for (int i = 0; i < children.Count; i++)
+
+		// Remove tutorial if present
+		if (_tutorialInstance != null && _tutorialInstance.IsInsideTree())
 		{
-			children[i].Set("visible", true);
+			_tutorialInstance.QueueFree();
+			_tutorialInstance = null;
 		}
-		
+
+		// Restore visibility of the game scene
+		if (_previousScene != null)
+			SetSubtreeVisible(_previousScene, true);
+
+		// If you changed CurrentScene earlier, you could restore it:
+		// GetTree().CurrentScene = _previousScene as Node;
+
+		// Clear UI states as before
 		exitMenu.Set("visible", false);
 		pauseMenu.Set("visible", false);
 		tutorialSceneContainer.Set("visible", false);
+
 		EmitSignal(SignalName.GamePauseChanged);
 		utils.Call("unpause", mainControl);
 		utils.Call("unpause", timerControl);
